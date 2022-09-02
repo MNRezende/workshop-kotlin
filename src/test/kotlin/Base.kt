@@ -7,12 +7,11 @@ import io.restassured.module.kotlin.extensions.When
 import io.restassured.specification.RequestSpecification
 import org.junit.jupiter.api.BeforeAll
 import org.junit.jupiter.api.BeforeEach
-import org.junit.jupiter.api.Test
 import org.junit.jupiter.api.TestInstance
 
 
 @TestInstance(TestInstance.Lifecycle.PER_CLASS)
-class Base {
+open class Base {
 
     @BeforeAll
     fun messageAll() {
@@ -32,6 +31,7 @@ class Base {
 
     fun specBaseToken () : RequestSpecification {
         val token = getToken()
+
             return RequestSpecBuilder()
                 .addRequestSpecification(specBase())
                 .addHeader("Authorization", "Bearer $token")
