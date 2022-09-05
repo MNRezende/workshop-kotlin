@@ -14,7 +14,7 @@ class CreatePost : Base() {
             contentType(ContentType.JSON)
             body("{\n" +
                     "    \"email\": \"eve.holt@reqres.in\",\n" +
-                    "    \"password\": \"pistol\"\n" +
+                    "    \"password\": \"control\"\n" +
                     "}")
             log().all()
         }When{
